@@ -39,7 +39,7 @@ namespace Bay_View_Hotel
             }
            else
             {
-                MessageBox.Show("Invalid");
+                MessageBox.Show("Invalid Log In");
             }
         }
 
