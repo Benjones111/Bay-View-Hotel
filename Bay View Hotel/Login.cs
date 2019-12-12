@@ -45,7 +45,7 @@ namespace Bay_View_Hotel
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.PasswordChar = '*';ZZZZZ
+            textBox2.PasswordChar = '*';
         }
     }
 }
