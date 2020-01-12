@@ -52,6 +52,12 @@
     <Compile Include="Admin View.Designer.cs">
       <DependentUpon>Admin View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings.Designer.cs">
+      <DependentUpon>Bookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin View.resx">
       <DependentUpon>Admin View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings.resx">
+      <DependentUpon>Bookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

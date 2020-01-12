@@ -24,7 +24,9 @@ namespace Bay_View_Hotel
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var newForm = new Bookings();
+            newForm.Show();
         }
     }
 }
