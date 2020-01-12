@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bay_View_Hotel
 {
-    public partial class Bookings : Form
+    public partial class Staff : Form
     {
-        public Bookings()
+        public Staff()
         {
             InitializeComponent();
         }
@@ -24,15 +24,9 @@ namespace Bay_View_Hotel
             newForm.Show();
         }
 
-        private void Bookings_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
-    }
-
+}

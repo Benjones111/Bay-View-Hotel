@@ -19,7 +19,9 @@ namespace Bay_View_Hotel
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var newForm = new Customers();
+            newForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,5 +30,20 @@ namespace Bay_View_Hotel
             var newForm = new Bookings();
             newForm.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newForm = new Reports();
+            newForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newForm = new Staff();
+            newForm.Show();
+        }
     }
-}
+    }
+
