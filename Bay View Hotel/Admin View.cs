@@ -61,6 +61,11 @@ namespace Bay_View_Hotel
         {
 
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

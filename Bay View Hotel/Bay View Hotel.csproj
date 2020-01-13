@@ -128,5 +128,14 @@
   <ItemGroup>
     <None Include="Resources\hotel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel-cartoon-png-favpng-Y7NfmCQtkLQ0stt4wDzp295ug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
