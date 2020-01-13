@@ -44,6 +44,23 @@ namespace Bay_View_Hotel
             var newForm = new Staff();
             newForm.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newForm = new Login();
+            newForm.Show();
+        }
+
+        private void Admin_View_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     }
 

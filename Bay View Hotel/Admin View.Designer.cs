@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,7 +48,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(43, 49);
+            this.button1.Location = new System.Drawing.Point(43, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(337, 58);
             this.button1.TabIndex = 0;
@@ -58,7 +59,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(43, 113);
+            this.button2.Location = new System.Drawing.Point(43, 141);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(337, 58);
             this.button2.TabIndex = 1;
@@ -69,7 +70,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(43, 241);
+            this.button3.Location = new System.Drawing.Point(43, 305);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(337, 58);
             this.button3.TabIndex = 2;
@@ -80,7 +81,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(43, 177);
+            this.button4.Location = new System.Drawing.Point(43, 223);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(337, 58);
             this.button4.TabIndex = 3;
@@ -91,14 +92,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Location = new System.Drawing.Point(201, 74);
+            this.panel1.Location = new System.Drawing.Point(33, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(424, 353);
+            this.panel1.Size = new System.Drawing.Size(420, 519);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -136,7 +139,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(689, 9);
+            this.panel2.Location = new System.Drawing.Point(1067, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(98, 41);
             this.panel2.TabIndex = 9;
@@ -151,12 +154,23 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F, System.Drawing.FontStyle.Bold);
+            this.button5.Location = new System.Drawing.Point(91, 410);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(222, 58);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Sign Out";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Admin_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1177, 652);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -164,6 +178,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Admin_View";
             this.Text = "Admin View";
+            this.Load += new System.EventHandler(this.Admin_View_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -186,5 +201,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -28,5 +28,10 @@ namespace Bay_View_Hotel
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
