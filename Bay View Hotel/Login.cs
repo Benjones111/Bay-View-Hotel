@@ -27,15 +27,23 @@ namespace Bay_View_Hotel
 
         }
 
+        //log in button
+        //if username is Admin and password is Password123 show admin form and close the log in form
+
         private void button1_Click(object sender, EventArgs e)
         {
            if (textBox1.Text == "Admin" && textBox2.Text == "Password123")
             {
                 this.Hide();
                 var newForm = new Admin_View();
-                newForm.Show();
+                newForm.Show();       
+            }
 
-                    
+            if (textBox1.Text == "Joe Bloggs" && textBox2.Text == "Password123")
+            {
+                this.Hide();
+                var newForm = new Staff_View();
+                newForm.Show();
             }
            else
             {
@@ -50,7 +58,7 @@ namespace Bay_View_Hotel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
