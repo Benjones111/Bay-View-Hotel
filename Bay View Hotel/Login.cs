@@ -47,5 +47,10 @@ namespace Bay_View_Hotel
         {
             textBox2.PasswordChar = '*';
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

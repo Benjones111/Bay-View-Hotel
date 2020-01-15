@@ -136,9 +136,9 @@
             this.label6.ForeColor = System.Drawing.Color.Khaki;
             this.label6.Location = new System.Drawing.Point(487, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 41);
+            this.label6.Size = new System.Drawing.Size(238, 41);
             this.label6.TabIndex = 31;
-            this.label6.Text = "View Bookings";
+            this.label6.Text = "View Customers";
             // 
             // Customers
             // 
