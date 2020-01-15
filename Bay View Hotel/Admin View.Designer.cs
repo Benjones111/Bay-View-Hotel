@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -44,7 +45,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(48, 75);
+            this.button3.Location = new System.Drawing.Point(44, 107);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(337, 58);
             this.button3.TabIndex = 2;
@@ -55,10 +56,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(55, 105);
+            this.panel1.Location = new System.Drawing.Point(46, 96);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(427, 274);
             this.panel1.TabIndex = 4;
@@ -67,7 +68,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(48, 148);
+            this.button5.Location = new System.Drawing.Point(44, 171);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(337, 58);
             this.button5.TabIndex = 4;
@@ -115,9 +116,9 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(445, 405);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(102, 47);
+            this.panel4.Size = new System.Drawing.Size(100, 47);
             this.panel4.TabIndex = 35;
             // 
             // label4
@@ -130,6 +131,16 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Administrator";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(44, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(337, 58);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Reports";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Admin_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +148,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(557, 464);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -161,5 +173,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

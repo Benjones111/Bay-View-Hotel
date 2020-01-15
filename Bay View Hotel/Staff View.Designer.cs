@@ -105,7 +105,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(337, 58);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Customers";
+            this.button2.Text = "Guests";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -116,7 +116,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(337, 58);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Reports";
+            this.button3.Text = "Rooms";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
