@@ -57,7 +57,7 @@ namespace Bay_View_Hotel
             }
 
         }
-
+        // test changes
         //make sure that the password box is showing as the * character instead of text so the password is not visible when typed out
 
         private void textBox2_TextChanged(object sender, EventArgs e)
