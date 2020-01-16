@@ -16,28 +16,28 @@ namespace Bay_View_Hotel
         {
             InitializeComponent();
         }
-
+        //when the sign out button is clicked, hide staff view form and show login form
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
             var newForm = new Login();
             newForm.Show();
         }
-
+        //when the manage bookings button is clicked, hide staff view form and show bookings form
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             var newForm = new Bookings();
             newForm.Show();
         }
-
+        //when the guest button is clicked, hide staff view form and show customers form
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
             var newForm = new Customers();
             newForm.Show();
         }
-
+        //when the guest button is clicked, hide staff view form and show the guest form
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -100,11 +100,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 22F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Khaki;
-            this.label6.Location = new System.Drawing.Point(487, 1);
+            this.label6.Location = new System.Drawing.Point(517, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 41);
+            this.label6.Size = new System.Drawing.Size(145, 41);
             this.label6.TabIndex = 31;
-            this.label6.Text = "View Bookings";
+            this.label6.Text = "Bookings";
             // 
             // pictureBox2
             // 

@@ -16,7 +16,7 @@ namespace Bay_View_Hotel
         {
             InitializeComponent();
         }
-
+        //when back button is clicked, hide customers form and show staff view form
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();

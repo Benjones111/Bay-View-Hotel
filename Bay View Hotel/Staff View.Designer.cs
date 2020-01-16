@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,16 +87,27 @@
             this.panel1.Size = new System.Drawing.Size(407, 390);
             this.panel1.TabIndex = 11;
             // 
-            // button1
+            // button4
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(37, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(337, 58);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "View Bookings";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button4.Location = new System.Drawing.Point(90, 270);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(222, 58);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Sign Out";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(37, 195);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(337, 58);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "See Rooms";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -109,27 +120,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // button1
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(37, 197);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(337, 58);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Rooms";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(90, 270);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(222, 58);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Sign Out";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(37, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(337, 58);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Manage Bookings";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Staff_View
             // 

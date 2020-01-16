@@ -36,7 +36,7 @@ namespace Bay_View_Hotel
         {
 
         }
-
+        //when back button is clicked, hide reports form and show staff view form
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
