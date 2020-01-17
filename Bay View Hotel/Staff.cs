@@ -12,15 +12,17 @@ namespace Bay_View_Hotel
 {
     public partial class Staff : Form
     {
-        public Staff()
+        public Staff(string instring)
         {
             InitializeComponent();
+            conString = instring;
         }
+        string conString;
         //when back button is clicked, hide staff form and show admin view form
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Admin_View();
+            var newForm = new Admin_View(conString);
             newForm.Show();
         }
 

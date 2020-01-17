@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SQLite;
 
 namespace Bay_View_Hotel
 {
@@ -16,6 +18,10 @@ namespace Bay_View_Hotel
         {
             InitializeComponent();
         }
+
+        SQLiteConnection conn = new SQLiteConnection();
+
+        string conString;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -35,7 +41,7 @@ namespace Bay_View_Hotel
             if (textBox1.Text == "Joe" && textBox2.Text == "Password123")
             {
                 this.Hide();
-                var newForm = new Staff_View();
+                var newForm = new Staff_View(conString);
                 newForm.Show();
             }
             else
@@ -46,7 +52,7 @@ namespace Bay_View_Hotel
                 if (textBox1.Text == "Admin" && textBox2.Text == "Password123")
                 {
                     this.Hide();
-                    var newForm = new Admin_View();
+                    var newForm = new Admin_View(conString);
                     newForm.Show();
                 }
                 //if what ever is typed out in the username and password box doesn't match one of the usernames and password stated above, show a message saying "Invalid Login"
@@ -70,6 +76,22 @@ namespace Bay_View_Hotel
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            conString = @"Data Source = C:\Users\tyler\source\repos\Bay-View-Hotel\hotel.db_new";
+
+                conn.ConnectionString = conString;
+                conn.Open();
+
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    connLabel.Text = "Conncted";
+                } 
+            
+            
+                
         }
     }
 }

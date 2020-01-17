@@ -12,10 +12,12 @@ namespace Bay_View_Hotel
 {
     public partial class Reports : Form
     {
-        public Reports()
+        public Reports(string instring)
         {
             InitializeComponent();
+            conString = instring;
         }
+        string conString;
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -40,7 +42,7 @@ namespace Bay_View_Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Staff_View();
+            var newForm = new Staff_View(conString);
             newForm.Show();
         }
 

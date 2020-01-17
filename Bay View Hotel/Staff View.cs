@@ -12,10 +12,12 @@ namespace Bay_View_Hotel
 {
     public partial class Staff_View : Form
     {
-        public Staff_View()
+        public Staff_View(string instring)
         {
             InitializeComponent();
+            conString = instring;
         }
+        string conString;
         //when the sign out button is clicked, hide staff view form and show login form
         private void button4_Click(object sender, EventArgs e)
         {
@@ -27,21 +29,21 @@ namespace Bay_View_Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Bookings();
+            var newForm = new Bookings(conString);
             newForm.Show();
         }
         //when the guest button is clicked, hide staff view form and show customers form
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Customers();
+            var newForm = new Customers(conString);
             newForm.Show();
         }
         //when the guest button is clicked, hide staff view form and show the guest form
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Rooms();
+            var newForm = new Rooms(conString);
             newForm.Show();
         }
     }

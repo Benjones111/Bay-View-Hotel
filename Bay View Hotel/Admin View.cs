@@ -12,17 +12,18 @@ namespace Bay_View_Hotel
 {
     public partial class Admin_View : Form
     {
-        public Admin_View()
+        public Admin_View(string instring)
         {
             InitializeComponent();
+            conString = instring;
         }
-      
+        string conString;
 
         //when the staff button is clicked, hide the admin view form and show staff form
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Staff();
+            var newForm = new Staff(conString);
             newForm.Show();
         }
         //when the sign out button is clicked, hide the admin view form and show login form
@@ -51,7 +52,7 @@ namespace Bay_View_Hotel
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            var newForm = new Reports();
+            var newForm = new Reports(conString);
             newForm.Show();
         }
     }
