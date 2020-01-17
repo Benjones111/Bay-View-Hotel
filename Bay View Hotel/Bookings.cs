@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.SQLite;// import sqlite
 
 namespace Bay_View_Hotel
 {
@@ -16,10 +16,12 @@ namespace Bay_View_Hotel
         public Bookings(string instring)
         {
             InitializeComponent();
+            // set constring
             conString = instring;
         }
         string conString;
 
+        // create connection strings and new dateTable for table rooms
         SQLiteConnection dbCon;
         SQLiteDataAdapter daRoom;
         DataTable room = new DataTable();
@@ -27,12 +29,14 @@ namespace Bay_View_Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            // pass the connection string into form so it can connect to the db
             var newForm = new Staff_View(conString);
             newForm.Show();
         }
 
         private void Bookings_Load(object sender, EventArgs e)
         {
+            // on form load get all the data from both tables in the db
             getRooms();
             getRoomBookings();
         }
@@ -41,12 +45,13 @@ namespace Bay_View_Hotel
         {
             try
             {
+                // use the connection string to open the connection to the db
                 using (SQLiteConnection con = new SQLiteConnection(conString))
                 {
                     using (SQLiteCommand cmd = con.CreateCommand())
                     {
                         con.Open();
-
+                        // select all from room booking and create new datatable to then fill the datagrid with the result
                         cmd.CommandText = @"select * from roombooking";
                         cmd.ExecuteNonQuery();
                         DataTable dt = new DataTable();
@@ -58,6 +63,7 @@ namespace Bay_View_Hotel
             }
             catch (Exception er)
             {
+                // show error msg if the query fails
                 MessageBox.Show("Error: " + er.Message);
             }
         }
@@ -66,9 +72,12 @@ namespace Bay_View_Hotel
         {
             try
             {
+                // clear any selections made in the combo box
                 room.Clear();
+                // use the connection string to open the connection to the db
                 using (dbCon = new SQLiteConnection(conString))
                 {
+                    // select Room_ID from the table room so that the result can be used to fill the combo box and a selection of what room is being used can be made.
                     string sqlcommand = @"Select Room_ID from room";
                     daRoom = new SQLiteDataAdapter(sqlcommand, dbCon);
                     daRoom.Fill(room);
@@ -81,6 +90,7 @@ namespace Bay_View_Hotel
             }
             catch (Exception ex)
             {
+                // show error msg if query fails
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
@@ -89,20 +99,22 @@ namespace Bay_View_Hotel
         {
             try
             {
+                // when the submit btn is clicked make another connection to the db
                 using (SQLiteConnection con = new SQLiteConnection(conString))
                 {
 
                     using (SQLiteCommand cmd = con.CreateCommand())
                     {
                         con.Open();
-
+                        // select relative fields from the roombooking table that are needed to create a new record
                         cmd.CommandText = @"Insert into roombooking(Room_ID, Start_date, End_Date) Values (@room, @start, @end)";
-
+                        // set the values from each of the inout types
                         cmd.Parameters.AddWithValue("room", cbRoom.SelectedValue);
                         cmd.Parameters.AddWithValue("start", startDatePicker.Value);
                         cmd.Parameters.AddWithValue("end", endDatePicker.Value);
 
                         int recordsChanged = cmd.ExecuteNonQuery();
+                        // if the record gets inserted show a success msg
                         tssLabel.Text = "Last action: insert new record ~ successful";
                         tssLabel.ForeColor = Color.Green;
                         getRoomBookings();
@@ -111,6 +123,7 @@ namespace Bay_View_Hotel
             }
             catch (Exception)
             {
+                // if the record gets inserted show a fail msg
                 tssLabel.Text = "Last action: insert new record ~ failed!";
                 tssLabel.ForeColor = Color.Red;
             }

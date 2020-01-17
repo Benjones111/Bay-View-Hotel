@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.SQLite;// import sqlite
 
 namespace Bay_View_Hotel
 {
@@ -17,6 +17,7 @@ namespace Bay_View_Hotel
         {
             InitializeComponent();
             conString = instring;
+            // get data from db on load
             getRoomBookings();
         }
         string conString;
@@ -24,6 +25,7 @@ namespace Bay_View_Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            // pass the constring to the next form 
             var newForm = new Staff_View(conString);
             newForm.Show();
         }
@@ -32,14 +34,16 @@ namespace Bay_View_Hotel
         {
             try
             {
+                // make another connection to the database
                 using (SQLiteConnection con = new SQLiteConnection(conString))
                 {
                     using (SQLiteCommand cmd = con.CreateCommand())
                     {
                         con.Open();
-
+                        // select all data from table room
                         cmd.CommandText = @"select * from room";
                         cmd.ExecuteNonQuery();
+                        // set the new datatable to fill the datagrid view
                         DataTable dt = new DataTable();
                         SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
                         da.Fill(dt);
@@ -49,6 +53,7 @@ namespace Bay_View_Hotel
             }
             catch (Exception er)
             {
+                // error msg if the query fails
                 MessageBox.Show("Error: " + er.Message);
             }
         }

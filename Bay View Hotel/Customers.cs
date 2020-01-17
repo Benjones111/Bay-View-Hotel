@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.SQLite;// import sqlite
 using System.Globalization;
 
 namespace Bay_View_Hotel
@@ -17,6 +17,7 @@ namespace Bay_View_Hotel
         public Customers(string instring)
         {
             InitializeComponent();
+            // set constring
             conString = instring;
         }
         string conString;
@@ -24,12 +25,14 @@ namespace Bay_View_Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            // pass the con string to next form
             var newForm = new Staff_View(conString);
             newForm.Show();
         }
 
         private void Customers_Load(object sender, EventArgs e)
         {
+            // get customers from the db on load
             getCustomers();
         }
 
@@ -37,14 +40,16 @@ namespace Bay_View_Hotel
         {
             try
             {
+                // open another connection with the constring
                 using (SQLiteConnection con = new SQLiteConnection(conString))
                 {
                     using (SQLiteCommand cmd = con.CreateCommand())
                     {
                         con.Open();
-
+                        // select all data from table guest
                         cmd.CommandText = @"select * from guest";
                         cmd.ExecuteNonQuery();
+                        // create data table to fill the grid view with guest results
                         DataTable dt = new DataTable();
                         SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
                         da.Fill(dt);
@@ -54,6 +59,7 @@ namespace Bay_View_Hotel
             }
             catch (Exception er)
             {
+                // error msg if query fails
                 MessageBox.Show("Error: " + er.Message);
             }
         }
@@ -72,22 +78,23 @@ namespace Bay_View_Hotel
         {
             try
             {
+                // connect to db using con string
                 using (SQLiteConnection con = new SQLiteConnection(conString))
                 {
 
                     using (SQLiteCommand cmd = con.CreateCommand())
                     {
                         con.Open();
-
+                        // select relative fields from the guest table that are needed to create a new record
                         cmd.CommandText = @"Insert into guest(First_name_Guest, Last_name_Guest, DOB_Guest, Address_Guest, Email_Guest, Registration_Date_Guest) Values (@firstname, @lastname, @dob, @address, @email, @regDate)";
-
+                        // set the values from each of the inout types
                         cmd.Parameters.AddWithValue("firstname", tbFirstName.Text);
                         cmd.Parameters.AddWithValue("lastname", tbLastName.Text);
                         cmd.Parameters.AddWithValue("dob", DOBpicker.Value);
                         cmd.Parameters.AddWithValue("address", tbAddress.Text);
                         cmd.Parameters.AddWithValue("email", tbEmail.Text);
                         cmd.Parameters.AddWithValue("regDate", DateTime.Now);
-
+                        // if the record gets inserted show a success msg
                         int recordsChanged = cmd.ExecuteNonQuery();
                         tssLabel.Text = "Last action: insert new record ~ successful";
                         tssLabel.ForeColor = Color.Green;
@@ -97,6 +104,7 @@ namespace Bay_View_Hotel
             }
             catch (Exception)
             {
+                // if the record gets inserted show a fail msg
                 tssLabel.Text = "Last action: insert new record ~ failed!";
                 tssLabel.ForeColor = Color.Red;
             }

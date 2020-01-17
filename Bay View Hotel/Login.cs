@@ -19,6 +19,7 @@ namespace Bay_View_Hotel
             InitializeComponent();
         }
 
+        // create sql connection string
         SQLiteConnection conn = new SQLiteConnection();
 
         string conString;
@@ -52,6 +53,7 @@ namespace Bay_View_Hotel
                 if (textBox1.Text == "Admin" && textBox2.Text == "Password123")
                 {
                     this.Hide();
+                    // pass connection string to admin view
                     var newForm = new Admin_View(conString);
                     newForm.Show();
                 }
@@ -80,15 +82,22 @@ namespace Bay_View_Hotel
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // set data source to location of the hotel database
             conString = @"Data Source = C:\Users\tyler\source\repos\Bay-View-Hotel\hotel.db_new";
-
+                
+                // open the connection and set the connection string
                 conn.ConnectionString = conString;
                 conn.Open();
 
                 if (conn.State == System.Data.ConnectionState.Open)
+                {   
+                    // if the connection is open and working display the connected string
+                    connLabel.Text = "Conncted to : hotel.db_new";
+                } else
                 {
-                    connLabel.Text = "Conncted";
-                } 
+                // if there is not connection to the db display not connected
+                    connLabel.Text = "Not Connected!";
+                }
             
             
                 
